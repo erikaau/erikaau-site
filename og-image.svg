@@ -5,13 +5,13 @@
       <stop offset="100%" style="stop-color:#0f1420"/>
     </linearGradient>
     <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#6366f1"/>
-      <stop offset="50%" style="stop-color:#a78bfa"/>
-      <stop offset="100%" style="stop-color:#38bdf8"/>
+      <stop offset="0%" style="stop-color:#f43f5e"/>
+      <stop offset="50%" style="stop-color:#fb7185"/>
+      <stop offset="100%" style="stop-color:#fb923c"/>
     </linearGradient>
     <linearGradient id="glow" x1="50%" y1="0%" x2="50%" y2="100%">
-      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.15"/>
-      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0"/>
+      <stop offset="0%" style="stop-color:#f43f5e;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#f43f5e;stop-opacity:0"/>
     </linearGradient>
   </defs>
 
@@ -22,7 +22,7 @@
   <ellipse cx="600" cy="200" rx="500" ry="300" fill="url(#glow)"/>
 
   <!-- Grid lines -->
-  <g stroke="#6366f1" stroke-width="0.5" opacity="0.08">
+  <g stroke="#f43f5e" stroke-width="0.5" opacity="0.08">
     <line x1="0" y1="105" x2="1200" y2="105"/>
     <line x1="0" y1="210" x2="1200" y2="210"/>
     <line x1="0" y1="315" x2="1200" y2="315"/>
@@ -41,9 +41,9 @@
   <rect x="40" y="40" width="1120" height="550" rx="16" fill="none" stroke="#1e2535" stroke-width="1.5"/>
 
   <!-- Badge -->
-  <rect x="80" y="80" width="220" height="32" rx="16" fill="#6366f1" fill-opacity="0.1" stroke="#6366f1" stroke-opacity="0.3" stroke-width="1"/>
-  <circle cx="102" cy="96" r="5" fill="#a78bfa"/>
-  <text x="116" y="101" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#a78bfa" letter-spacing="1">AI NATIVE DESIGNER</text>
+  <rect x="80" y="80" width="220" height="32" rx="16" fill="#f43f5e" fill-opacity="0.1" stroke="#f43f5e" stroke-opacity="0.3" stroke-width="1"/>
+  <circle cx="102" cy="96" r="5" fill="#fb7185"/>
+  <text x="116" y="101" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#fb7185" letter-spacing="1">AI NATIVE DESIGNER</text>
 
   <!-- Name -->
   <text x="80" y="210" font-family="system-ui, -apple-system, sans-serif" font-size="96" font-weight="700" letter-spacing="-3" fill="#e2e8f0">Erika Au</text>
@@ -58,10 +58,10 @@
   <line x1="80" y1="415" x2="400" y2="415" stroke="#1e2535" stroke-width="1.5"/>
 
   <!-- URL -->
-  <text x="80" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#6366f1" letter-spacing="0.5">erikaau.co</text>
+  <text x="80" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#f43f5e" letter-spacing="0.5">erikaau.co</text>
 
   <!-- Monogram circle -->
-  <circle cx="1060" cy="315" r="120" fill="#6366f1" fill-opacity="0.06" stroke="#6366f1" stroke-opacity="0.15" stroke-width="1.5"/>
-  <circle cx="1060" cy="315" r="80" fill="#6366f1" fill-opacity="0.04" stroke="#6366f1" stroke-opacity="0.1" stroke-width="1"/>
+  <circle cx="1060" cy="315" r="120" fill="#f43f5e" fill-opacity="0.06" stroke="#f43f5e" stroke-opacity="0.15" stroke-width="1.5"/>
+  <circle cx="1060" cy="315" r="80" fill="#f43f5e" fill-opacity="0.04" stroke="#f43f5e" stroke-opacity="0.1" stroke-width="1"/>
   <text x="1060" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="700" fill="url(#accent)" text-anchor="middle">EA</text>
 </svg>

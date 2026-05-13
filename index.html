@@ -6,7 +6,7 @@
   <title>Erika Au — AI Native UX Designer & Design Engineer</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23080b12'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='28' font-weight='700' fill='url(%23g)'><tspan fill='%236366f1'>E</tspan><tspan fill='%23a78bfa'>A</tspan></text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23080b12'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='28' font-weight='700'><tspan fill='%23f43f5e'>E</tspan><tspan fill='%23fb923c'>A</tspan></text></svg>" />
 
   <!-- SEO -->
   <meta name="description" content="Erika Au is an AI-native UX designer and design engineer who bridges the gap between AI systems and human experience — designing and building interfaces that make intelligence feel effortless." />
@@ -28,18 +28,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #080b12;
-      --surface: #0f1420;
-      --border: #1e2535;
-      --accent: #6366f1;
-      --accent2: #a78bfa;
-      --accent3: #38bdf8;
-      --text: #e2e8f0;
-      --muted: #64748b;
-      --glow: rgba(99, 102, 241, 0.15);
+      --bg: #fafaf9;
+      --surface: #ffffff;
+      --border: #e7e5e4;
+      --accent: #f43f5e;
+      --accent2: #e11d48;
+      --accent3: #fb923c;
+      --text: #1c1917;
+      --muted: #78716c;
+      --glow: rgba(244, 63, 94, 0.08);
     }
 
-    html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
@@ -71,7 +70,7 @@
       padding: 1.25rem 2.5rem;
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
-      background: rgba(8, 11, 18, 0.7);
+      background: rgba(250, 250, 249, 0.8);
     }
 
     .nav-logo {
@@ -122,7 +121,7 @@
       font-size: 0.75rem;
       color: var(--accent2);
       margin-bottom: 2rem;
-      background: rgba(99, 102, 241, 0.05);
+      background: rgba(244, 63, 94, 0.05);
     }
 
     .hero-badge .dot {
@@ -188,8 +187,8 @@
     }
 
     .btn-primary:hover {
-      background: #5254cc;
-      box-shadow: 0 0 24px rgba(99, 102, 241, 0.4);
+      background: #e11d48;
+      box-shadow: 0 0 24px rgba(244, 63, 94, 0.3);
       transform: translateY(-1px);
     }
 
@@ -298,6 +297,46 @@
       margin-top: 0.25rem;
     }
 
+    /* ── TOOLS ── */
+    .about-tools {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .tools-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .tools-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .tool-pill {
+      padding: 0.5rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      transition: all 0.2s;
+      cursor: default;
+    }
+
+    .tool-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(244, 63, 94, 0.05);
+    }
+
     /* ── SKILLS ── */
     .skills-grid {
       display: grid;
@@ -327,7 +366,7 @@
     .skill-card:hover {
       border-color: var(--accent);
       transform: translateY(-3px);
-      box-shadow: 0 8px 32px rgba(99, 102, 241, 0.12);
+      box-shadow: 0 8px 32px rgba(244, 63, 94, 0.1);
     }
 
     .skill-card:hover::before { opacity: 1; }
@@ -362,9 +401,22 @@
       border-radius: 4px;
       font-size: 0.7rem;
       font-weight: 500;
-      background: rgba(99, 102, 241, 0.1);
+      background: rgba(244, 63, 94, 0.07);
       color: var(--accent2);
-      border: 1px solid rgba(99, 102, 241, 0.2);
+      border: 1px solid rgba(244, 63, 94, 0.2);
+    }
+
+    /* ── COMING SOON ── */
+    .coming-soon-banner {
+      display: inline-block;
+      margin-bottom: 2rem;
+      padding: 0.5rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--muted);
+      border: 1px dashed var(--border);
+      background: var(--surface);
     }
 
     /* ── PROJECTS ── */
@@ -385,7 +437,7 @@
     .project-card:hover {
       border-color: var(--accent);
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15);
+      box-shadow: 0 12px 40px rgba(244, 63, 94, 0.1);
     }
 
     .project-thumb {
@@ -399,9 +451,9 @@
       overflow: hidden;
     }
 
-    .project-thumb-1 { background: linear-gradient(135deg, #1a1035 0%, #0f1a30 100%); }
-    .project-thumb-2 { background: linear-gradient(135deg, #0d1f1a 0%, #0a1520 100%); }
-    .project-thumb-3 { background: linear-gradient(135deg, #1a0f20 0%, #150d25 100%); }
+    .project-thumb-1 { background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%); }
+    .project-thumb-2 { background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); }
+    .project-thumb-3 { background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%); }
 
     .project-thumb::after {
       content: '';
@@ -497,7 +549,7 @@
       top: -100px; left: 50%;
       transform: translateX(-50%);
       width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.08), transparent 70%);
+      background: radial-gradient(circle, rgba(244, 63, 94, 0.06), transparent 70%);
       pointer-events: none;
     }
 
@@ -573,16 +625,11 @@
       <li><a href="#process">Process</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1.1rem; font-size: 0.8rem;">Let's talk</a>
   </nav>
 
   <!-- HERO -->
   <div style="position: relative; overflow: hidden;">
     <div class="hero">
-      <div class="hero-badge">
-        <span class="dot"></span>
-        Available for new projects
-      </div>
       <h1>
         UX Designer &amp;<br>
         <span class="line2">Design Engineer</span>
@@ -622,22 +669,17 @@
           <strong>models, prompts, and components</strong> simultaneously.
         </p>
       </div>
-      <div class="about-stats fade-in">
-        <div class="stat-card">
-          <div class="stat-number">5+</div>
-          <div class="stat-label">Years in AI product design</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">30+</div>
-          <div class="stat-label">AI features shipped</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">12+</div>
-          <div class="stat-label">Design systems built</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">∞</div>
-          <div class="stat-label">Prompts iterated</div>
+      <div class="about-tools fade-in">
+        <p class="tools-label">Tools & technologies</p>
+        <div class="tools-pills">
+          <span class="tool-pill">Figma</span>
+          <span class="tool-pill">React</span>
+          <span class="tool-pill">TypeScript</span>
+          <span class="tool-pill">Claude</span>
+          <span class="tool-pill">v0</span>
+          <span class="tool-pill">Cursor</span>
+          <span class="tool-pill">Framer</span>
+          <span class="tool-pill">Vercel</span>
         </div>
       </div>
     </div>
@@ -654,7 +696,6 @@
     </div>
     <div class="skills-grid">
       <div class="skill-card fade-in">
-        <span class="skill-icon">🧠</span>
         <div class="skill-title">AI Product Design</div>
         <div class="skill-desc">Designing for LLM-powered products — from prompt surfaces and streaming UIs to error states and trust signals.</div>
         <div class="skill-tags">
@@ -664,7 +705,6 @@
         </div>
       </div>
       <div class="skill-card fade-in">
-        <span class="skill-icon">⚙️</span>
         <div class="skill-title">Design Engineering</div>
         <div class="skill-desc">Turning designs into production-ready components with React, Framer, and modern CSS — no handoff gap.</div>
         <div class="skill-tags">
@@ -675,7 +715,6 @@
         </div>
       </div>
       <div class="skill-card fade-in">
-        <span class="skill-icon">🎨</span>
         <div class="skill-title">Design Systems</div>
         <div class="skill-desc">Building scalable component libraries and tokens that speak both design and code fluently.</div>
         <div class="skill-tags">
@@ -685,7 +724,6 @@
         </div>
       </div>
       <div class="skill-card fade-in">
-        <span class="skill-icon">🔬</span>
         <div class="skill-title">User Research</div>
         <div class="skill-desc">Mixed-methods research to understand how people form mental models around AI-assisted workflows.</div>
         <div class="skill-tags">
@@ -695,7 +733,6 @@
         </div>
       </div>
       <div class="skill-card fade-in">
-        <span class="skill-icon">🤖</span>
         <div class="skill-title">Prompt Engineering</div>
         <div class="skill-desc">Crafting and iterating prompts as a design material — shaping tone, structure, and output quality.</div>
         <div class="skill-tags">
@@ -705,7 +742,6 @@
         </div>
       </div>
       <div class="skill-card fade-in">
-        <span class="skill-icon">📐</span>
         <div class="skill-title">Interaction Design</div>
         <div class="skill-desc">Micro-interactions, animation, and motion design that communicate intelligence without overwhelming users.</div>
         <div class="skill-tags">
@@ -726,9 +762,12 @@
       <h2>Recent projects</h2>
       <p class="section-desc">A selection of AI products and design systems I've designed and built.</p>
     </div>
-    <div class="projects-grid">
+    <div class="coming-soon-banner fade-in">
+      Case studies are being documented — check back soon.
+    </div>
+    <div class="projects-grid" style="opacity: 0.35; pointer-events: none;">
       <div class="project-card fade-in">
-        <div class="project-thumb project-thumb-1">🤖</div>
+        <div class="project-thumb project-thumb-1"></div>
         <div class="project-body">
           <div class="project-title">Conversational AI Dashboard</div>
           <div class="project-desc">Redesigned a B2B analytics platform with an embedded AI assistant — reducing time-to-insight by 60%.</div>
@@ -742,7 +781,7 @@
         </div>
       </div>
       <div class="project-card fade-in">
-        <div class="project-thumb project-thumb-2">✨</div>
+        <div class="project-thumb project-thumb-2"></div>
         <div class="project-body">
           <div class="project-title">Generative UI Design System</div>
           <div class="project-desc">A component library built for AI-generated content — handling variable-length outputs, skeleton states, and streaming.</div>
@@ -756,7 +795,7 @@
         </div>
       </div>
       <div class="project-card fade-in">
-        <div class="project-thumb project-thumb-3">🧬</div>
+        <div class="project-thumb project-thumb-3"></div>
         <div class="project-body">
           <div class="project-title">AI Onboarding Flow</div>
           <div class="project-desc">Designed a progressive onboarding system that teaches users to co-create with AI without a manual.</div>
