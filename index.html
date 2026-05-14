@@ -37,7 +37,7 @@
       --bg: #080a0f;
       --surface: #0f1117;
       --text: #eaeaea;
-      --muted: #52525b;
+      --muted: #a1a1aa;
       --border: #1e2230;
       --accent: #f43f5e;
     }
@@ -283,24 +283,24 @@
     }
 
     .about-intro {
-      font-family: 'Syne', system-ui, sans-serif;
-      font-size: clamp(1.25rem, 2vw, 1.6rem);
+      font-size: 1rem;
       font-weight: 400;
-      line-height: 1.4;
-      margin-bottom: 2rem;
-      color: var(--text);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+      color: var(--muted);
     }
 
     .about-body p {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: var(--muted);
-      margin-bottom: 1.25rem;
-      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      line-height: 1.9;
     }
 
     .about-body p strong {
       color: var(--text);
       font-weight: 500;
+      letter-spacing: 0.01em;
     }
 
     .tools-label {
@@ -541,6 +541,16 @@
       min-width: 60px;
     }
 
+    .footer-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+
+    .footer-link:hover { color: var(--accent); }
+
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
@@ -643,11 +653,18 @@
             <span class="tool-pill">Figma</span>
             <span class="tool-pill">React</span>
             <span class="tool-pill">TypeScript</span>
+            <span class="tool-pill">Next.js</span>
+            <span class="tool-pill">Tailwind</span>
+            <span class="tool-pill">GitHub</span>
             <span class="tool-pill">Claude</span>
+            <span class="tool-pill">OpenAI API</span>
+            <span class="tool-pill">Supabase</span>
             <span class="tool-pill">v0</span>
             <span class="tool-pill">Cursor</span>
             <span class="tool-pill">Framer</span>
             <span class="tool-pill">Vercel</span>
+            <span class="tool-pill">Hotjar</span>
+            <span class="tool-pill">Notion</span>
           </div>
         </div>
       </div>
@@ -825,6 +842,7 @@
 
   <footer>
     <span>© 2026 Erika Au</span>
+    <a href="https://github.com/erikaau" target="_blank" class="footer-link">github.com/erikaau</a>
     <span>Designed & built by hand</span>
   </footer>
 
