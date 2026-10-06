@@ -54,53 +54,6 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(247, 243, 236, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.5rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-logo {
-      font-family: 'Syne', system-ui, sans-serif;
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: var(--text);
-      text-decoration: none;
-      letter-spacing: 0.01em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--accent4); }
-
-    /* ── HERO SHAPES ── */
     /* ── HERO SHAPES ── */
     .hero-shapes {
       position: absolute;
@@ -658,15 +611,30 @@
       border-right: 1px solid var(--border);
     }
 
+    /* ── HERO TOP ── */
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: relative;
+      z-index: 1;
+      margin-bottom: auto;
+    }
+
+    .hero-name {
+      font-family: 'Syne', system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: 0.01em;
+    }
+
     /* ── CONTENTS NAV ── */
     .contents-nav {
-      position: absolute;
-      right: 3rem;
-      top: 3rem;
-      z-index: 1;
       display: flex;
       flex-direction: column;
       gap: 0.1rem;
+      text-align: right;
     }
 
     .contents-label {
@@ -680,6 +648,7 @@
 
     .contents-link {
       display: flex;
+      justify-content: flex-end;
       align-items: baseline;
       gap: 0.6rem;
       text-decoration: none;
@@ -729,9 +698,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      .nav-inner { padding: 1.25rem 1.5rem; }
-      .nav-links { display: none; }
-      .hero { padding: 7rem 1.5rem 3.5rem; border: none; }
+      .hero { padding: 2.5rem 1.5rem 3.5rem; border: none; }
       .section-wrap { border: none; }
       section { padding: 4rem 1.5rem; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -759,6 +726,8 @@
         <div class="shape shape-3"></div>
         <div class="shape shape-4"></div>
       </div>
+      <div class="hero-top">
+      <span class="hero-name">Erika Au</span>
       <nav class="contents-nav" aria-label="Page contents">
         <p class="contents-label">Contents</p>
         <a href="#work" class="contents-link" data-section="work">
@@ -782,6 +751,7 @@
           <span class="contents-link-label">Contact</span>
         </a>
       </nav>
+      </div>
       <p class="hero-kicker">UX Designer & Design Engineer</p>
       <h1>AI is the<br>material.<br><em>Design</em><br>is the craft.</h1>
       <div class="hero-footer">
