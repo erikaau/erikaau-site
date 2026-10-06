@@ -486,6 +486,82 @@
       align-self: center;
     }
 
+    /* ── TIMELINE ── */
+    .timeline-bar {
+      position: relative;
+      height: 2px;
+      background: var(--border);
+      margin-bottom: 4rem;
+      overflow: visible;
+    }
+
+    .timeline-bar-fill {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      background: var(--accent);
+      opacity: 0.5;
+    }
+
+    .timeline-years {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.75rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    .timeline-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 200px 1fr auto;
+      gap: 3rem;
+      padding: 1.75rem 0;
+      border-top: 1px solid var(--border);
+      align-items: baseline;
+      transition: all 0.2s;
+    }
+
+    .timeline-row:last-child { border-bottom: 1px solid var(--border); }
+
+    .timeline-company {
+      font-family: 'Syne', system-ui, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    .timeline-role {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .timeline-dates {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .timeline-dates .now {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      border-radius: 2px;
+      margin-left: 0.4rem;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+
     /* ── CONTACT ── */
     .contact-inner {
       display: grid;
@@ -592,6 +668,8 @@
       .process-desc { display: none; }
       .projects-grid { grid-template-columns: 1fr; }
       .project-card { border-right: none; border-top: 1px solid var(--border); padding: 2rem 0; }
+      .timeline-row { grid-template-columns: 1fr auto; gap: 1rem; }
+      .timeline-role { display: none; }
       .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
       footer { padding: 1.5rem; border-left: none; border-right: none; }
     }
@@ -604,10 +682,10 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo">Erika Au</a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#process">Process</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -624,7 +702,7 @@
       <p class="hero-kicker">UX Designer & Design Engineer</p>
       <h1>AI is the<br>material.<br><em>Design</em><br>is the craft.</h1>
       <div class="hero-footer">
-        <p class="hero-sub">I bridge the gap between machine intelligence and human experience — designing and building interfaces that make complexity disappear.</p>
+        <p class="hero-sub">UX Designer & Design Engineer. AI-native.</p>
         <div class="hero-cta">
           <a href="#work" class="link-primary">Selected work ↓</a>
           <a href="#contact" class="link-ghost">Get in touch</a>
@@ -633,128 +711,11 @@
     </div>
   </div>
 
-  <!-- ABOUT -->
-  <div class="section-wrap">
-    <section id="about">
-      <div class="section-header fade-in">
-        <span class="section-num">01 — About</span>
-        <h2>Where design<br>meets <em>engineering</em></h2>
-      </div>
-      <div class="about-grid fade-in">
-        <div class="about-body">
-          <p class="about-intro">I don't just hand off specs — I build what I design.</p>
-          <p>I'm an <strong>AI-native UX designer and design engineer</strong> who works at the intersection of machine intelligence and human-centred design.</p>
-          <p>My practice spans <strong>interaction design, prototyping in code, and AI product strategy</strong>. I've shipped AI features across conversational interfaces, generative tools, and data-heavy dashboards.</p>
-          <p>I believe the next generation of great products will be shaped by designers who can think in <strong>models, prompts, and components</strong> simultaneously.</p>
-        </div>
-        <div>
-          <p class="tools-label">Tools & technologies</p>
-          <div class="tools-pills">
-            <span class="tool-pill">Figma</span>
-            <span class="tool-pill">React</span>
-            <span class="tool-pill">TypeScript</span>
-            <span class="tool-pill">Next.js</span>
-            <span class="tool-pill">Tailwind</span>
-            <span class="tool-pill">GitHub</span>
-            <span class="tool-pill">Claude</span>
-            <span class="tool-pill">OpenAI API</span>
-            <span class="tool-pill">Supabase</span>
-            <span class="tool-pill">v0</span>
-            <span class="tool-pill">Cursor</span>
-            <span class="tool-pill">Framer</span>
-            <span class="tool-pill">Vercel</span>
-            <span class="tool-pill">Hotjar</span>
-            <span class="tool-pill">Notion</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- SKILLS -->
-  <div class="section-wrap">
-    <section id="skills">
-      <div class="section-header fade-in">
-        <span class="section-num">02 — Skills</span>
-        <h2>What I bring<br>to the table</h2>
-      </div>
-      <div class="skills-list fade-in">
-        <div class="skill-row">
-          <div class="skill-name">AI Product Design</div>
-          <div class="skill-right">
-            <p class="skill-desc">Designing for LLM-powered products — from prompt surfaces and streaming UIs to error states and trust signals.</p>
-            <div class="skill-tags">
-              <span class="tag">LLM interfaces</span>
-              <span class="tag">Conversational UX</span>
-              <span class="tag">AI affordances</span>
-            </div>
-          </div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-name">Design Engineering</div>
-          <div class="skill-right">
-            <p class="skill-desc">Turning designs into production-ready components with React, Framer, and modern CSS — no handoff gap.</p>
-            <div class="skill-tags">
-              <span class="tag">React</span>
-              <span class="tag">Framer</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">CSS</span>
-            </div>
-          </div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-name">Design Systems</div>
-          <div class="skill-right">
-            <p class="skill-desc">Building scalable component libraries and tokens that speak both design and code fluently.</p>
-            <div class="skill-tags">
-              <span class="tag">Figma</span>
-              <span class="tag">Storybook</span>
-              <span class="tag">Tokens</span>
-            </div>
-          </div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-name">User Research</div>
-          <div class="skill-right">
-            <p class="skill-desc">Mixed-methods research to understand how people form mental models around AI-assisted workflows.</p>
-            <div class="skill-tags">
-              <span class="tag">Usability testing</span>
-              <span class="tag">Mental models</span>
-              <span class="tag">Surveys</span>
-            </div>
-          </div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-name">Prompt Engineering</div>
-          <div class="skill-right">
-            <p class="skill-desc">Crafting and iterating prompts as a design material — shaping tone, structure, and output quality.</p>
-            <div class="skill-tags">
-              <span class="tag">Claude API</span>
-              <span class="tag">GPT-4</span>
-              <span class="tag">Multimodal</span>
-            </div>
-          </div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-name">Interaction Design</div>
-          <div class="skill-right">
-            <p class="skill-desc">Micro-interactions, animation, and motion design that communicate intelligence without overwhelming users.</p>
-            <div class="skill-tags">
-              <span class="tag">Motion</span>
-              <span class="tag">Prototyping</span>
-              <span class="tag">Accessibility</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
   <!-- WORK -->
   <div class="section-wrap">
     <section id="work">
       <div class="section-header fade-in">
-        <span class="section-num">03 — Work</span>
+        <span class="section-num">01 — Work</span>
         <h2>Selected<br>projects</h2>
       </div>
       <p class="coming-soon-text fade-in">Case studies coming soon.</p>
@@ -794,8 +755,8 @@
   <div class="section-wrap">
     <section id="process">
       <div class="section-header fade-in">
-        <span class="section-num">04 — Process</span>
-        <h2>How I<br>work</h2>
+        <span class="section-num">02 — Process</span>
+        <h2>How I<br>think</h2>
       </div>
       <div class="process-list fade-in">
         <div class="process-row">
@@ -817,6 +778,73 @@
           <div class="process-num">04</div>
           <div class="process-title">Ship</div>
           <p class="process-desc">Deliver polished components, specs, and documentation ready for production.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section-wrap">
+    <section id="experience">
+      <div class="section-header fade-in">
+        <span class="section-num">03 — Experience</span>
+        <h2>Where I've<br>been</h2>
+      </div>
+      <div class="fade-in">
+        <div class="timeline-bar">
+          <div class="timeline-bar-fill" style="width: 100%"></div>
+        </div>
+        <div class="timeline-years">
+          <span>2015</span>
+          <span>2018</span>
+          <span>2021</span>
+          <span>2024</span>
+          <span>Now</span>
+        </div>
+      </div>
+      <div class="timeline-list fade-in">
+        <!-- Replace with your actual career history -->
+        <div class="timeline-row">
+          <div class="timeline-company">Company</div>
+          <div class="timeline-role">Role title here</div>
+          <div class="timeline-dates">20XX — 20XX</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section-wrap">
+    <section id="about">
+      <div class="section-header fade-in">
+        <span class="section-num">04 — About</span>
+        <h2>Background</h2>
+      </div>
+      <div class="about-grid fade-in">
+        <div class="about-body">
+          <p class="about-intro">I don't just hand off specs — I build what I design.</p>
+          <p>I'm an <strong>AI-native UX designer and design engineer</strong> who works at the intersection of machine intelligence and human-centred design.</p>
+          <p>My practice spans <strong>interaction design, prototyping in code, and AI product strategy</strong>. I've shipped AI features across conversational interfaces, generative tools, and data-heavy dashboards.</p>
+        </div>
+        <div>
+          <p class="tools-label">Tools & technologies</p>
+          <div class="tools-pills">
+            <span class="tool-pill">Figma</span>
+            <span class="tool-pill">React</span>
+            <span class="tool-pill">TypeScript</span>
+            <span class="tool-pill">Next.js</span>
+            <span class="tool-pill">Tailwind</span>
+            <span class="tool-pill">GitHub</span>
+            <span class="tool-pill">Claude</span>
+            <span class="tool-pill">OpenAI API</span>
+            <span class="tool-pill">Supabase</span>
+            <span class="tool-pill">v0</span>
+            <span class="tool-pill">Cursor</span>
+            <span class="tool-pill">Framer</span>
+            <span class="tool-pill">Vercel</span>
+            <span class="tool-pill">Hotjar</span>
+            <span class="tool-pill">Notion</span>
+          </div>
         </div>
       </div>
     </section>
