@@ -34,12 +34,13 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #080a0f;
-      --surface: #0f1117;
-      --text: #eaeaea;
-      --muted: #a1a1aa;
-      --border: #1e2230;
-      --accent: #f43f5e;
+      --bg: #f7f3ec;
+      --surface: #f0ebe0;
+      --text: #1a1510;
+      --muted: #7a6a58;
+      --border: #ddd0be;
+      --accent: #d4860a;
+      --accent2: #c94a2d;
     }
 
     body {
@@ -49,6 +50,8 @@
       font-weight: 300;
       line-height: 1.6;
       overflow-x: hidden;
+      background-image: radial-gradient(var(--border) 1px, transparent 1px);
+      background-size: 28px 28px;
     }
 
     /* ── NAV ── */
@@ -56,7 +59,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(8, 10, 15, 0.9);
+      background: rgba(247, 243, 236, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
@@ -117,22 +120,22 @@
       position: absolute;
     }
 
-    /* Large rose block — right side, anchors top corner */
+    /* Large saffron block — right side */
     .shape-1 {
       width: 280px;
       height: 400px;
       background: var(--accent);
-      opacity: 0.15;
+      opacity: 0.22;
       top: 0;
       right: 0;
     }
 
-    /* Bright square — overlaps bottom edge of shape-1 */
+    /* Terracotta square — overlaps bottom edge of shape-1 */
     .shape-2 {
       width: 130px;
       height: 130px;
-      background: var(--accent);
-      opacity: 0.6;
+      background: var(--accent2);
+      opacity: 0.75;
       top: 320px;
       right: 180px;
     }
@@ -142,7 +145,7 @@
       width: 200px;
       height: 44px;
       background: var(--text);
-      opacity: 0.06;
+      opacity: 0.08;
       bottom: 22%;
       right: 60px;
     }
@@ -159,6 +162,7 @@
       margin: 0 auto;
       border-left: 1px solid var(--border);
       border-right: 1px solid var(--border);
+      background: var(--bg);
     }
 
     .hero-kicker {
@@ -182,7 +186,7 @@
 
     h1 em {
       font-style: italic;
-      color: var(--accent);
+      color: var(--accent2);
     }
 
     .hero-footer {
@@ -243,6 +247,7 @@
     section {
       padding: 6rem 3rem;
       border-top: 1px solid var(--border);
+      background: var(--bg);
     }
 
     .section-header {
@@ -551,7 +556,7 @@
     .timeline-dates .now {
       display: inline-block;
       padding: 0.15rem 0.5rem;
-      background: var(--accent);
+      background: var(--accent2);
       color: #fff;
       font-size: 0.65rem;
       font-weight: 600;
