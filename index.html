@@ -662,11 +662,10 @@
 
     /* ── CONTENTS NAV ── */
     .contents-nav {
-      position: fixed;
-      right: 2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 90;
+      position: absolute;
+      right: 3rem;
+      top: 8rem;
+      z-index: 1;
       display: flex;
       flex-direction: column;
       gap: 0.1rem;
@@ -714,7 +713,7 @@
     .contents-link.active .contents-link-num { color: var(--accent); }
     .contents-link.active .contents-link-label { color: var(--accent); }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 768px) {
       .contents-nav { display: none; }
     }
 
@@ -752,31 +751,6 @@
 </head>
 <body>
 
-  <!-- CONTENTS NAV -->
-  <nav class="contents-nav" aria-label="Page contents">
-    <p class="contents-label">Contents</p>
-    <a href="#work" class="contents-link" data-section="work">
-      <span class="contents-link-num">01</span>
-      <span class="contents-link-label">Work</span>
-    </a>
-    <a href="#experience" class="contents-link" data-section="experience">
-      <span class="contents-link-num">02</span>
-      <span class="contents-link-label">Experience</span>
-    </a>
-    <a href="#process" class="contents-link" data-section="process">
-      <span class="contents-link-num">03</span>
-      <span class="contents-link-label">Process</span>
-    </a>
-    <a href="#about" class="contents-link" data-section="about">
-      <span class="contents-link-num">04</span>
-      <span class="contents-link-label">About</span>
-    </a>
-    <a href="#contact" class="contents-link" data-section="contact">
-      <span class="contents-link-num">05</span>
-      <span class="contents-link-label">Contact</span>
-    </a>
-  </nav>
-
   <!-- NAV -->
   <nav>
     <div class="nav-inner">
@@ -800,6 +774,29 @@
         <div class="shape shape-3"></div>
         <div class="shape shape-4"></div>
       </div>
+      <nav class="contents-nav" aria-label="Page contents">
+        <p class="contents-label">Contents</p>
+        <a href="#work" class="contents-link" data-section="work">
+          <span class="contents-link-num">01</span>
+          <span class="contents-link-label">Work</span>
+        </a>
+        <a href="#experience" class="contents-link" data-section="experience">
+          <span class="contents-link-num">02</span>
+          <span class="contents-link-label">Experience</span>
+        </a>
+        <a href="#process" class="contents-link" data-section="process">
+          <span class="contents-link-num">03</span>
+          <span class="contents-link-label">Process</span>
+        </a>
+        <a href="#about" class="contents-link" data-section="about">
+          <span class="contents-link-num">04</span>
+          <span class="contents-link-label">About</span>
+        </a>
+        <a href="#contact" class="contents-link" data-section="contact">
+          <span class="contents-link-num">05</span>
+          <span class="contents-link-label">Contact</span>
+        </a>
+      </nav>
       <p class="hero-kicker">UX Designer & Design Engineer</p>
       <h1>AI is the<br>material.<br><em>Design</em><br>is the craft.</h1>
       <div class="hero-footer">
