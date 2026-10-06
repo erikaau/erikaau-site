@@ -660,6 +660,64 @@
       border-right: 1px solid var(--border);
     }
 
+    /* ── CONTENTS NAV ── */
+    .contents-nav {
+      position: fixed;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .contents-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .contents-link {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      text-decoration: none;
+      padding: 0.35rem 0;
+      transition: all 0.2s;
+      opacity: 0.5;
+    }
+
+    .contents-link:hover,
+    .contents-link.active {
+      opacity: 1;
+    }
+
+    .contents-link-num {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      min-width: 1.5rem;
+    }
+
+    .contents-link-label {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: 0.03em;
+    }
+
+    .contents-link.active .contents-link-num { color: var(--accent); }
+    .contents-link.active .contents-link-label { color: var(--accent); }
+
+    @media (max-width: 1100px) {
+      .contents-nav { display: none; }
+    }
+
     /* ── SCROLL ANIMATIONS ── */
     .fade-in {
       opacity: 0;
@@ -693,6 +751,31 @@
   </style>
 </head>
 <body>
+
+  <!-- CONTENTS NAV -->
+  <nav class="contents-nav" aria-label="Page contents">
+    <p class="contents-label">Contents</p>
+    <a href="#work" class="contents-link" data-section="work">
+      <span class="contents-link-num">01</span>
+      <span class="contents-link-label">Work</span>
+    </a>
+    <a href="#experience" class="contents-link" data-section="experience">
+      <span class="contents-link-num">02</span>
+      <span class="contents-link-label">Experience</span>
+    </a>
+    <a href="#process" class="contents-link" data-section="process">
+      <span class="contents-link-num">03</span>
+      <span class="contents-link-label">Process</span>
+    </a>
+    <a href="#about" class="contents-link" data-section="about">
+      <span class="contents-link-num">04</span>
+      <span class="contents-link-label">About</span>
+    </a>
+    <a href="#contact" class="contents-link" data-section="contact">
+      <span class="contents-link-num">05</span>
+      <span class="contents-link-label">Contact</span>
+    </a>
+  </nav>
 
   <!-- NAV -->
   <nav>
@@ -935,6 +1018,22 @@
       { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
     );
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    const contentsLinks = document.querySelectorAll('.contents-link');
+    const sections = document.querySelectorAll('section[id]');
+    const sectionObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            contentsLinks.forEach(l => l.classList.remove('active'));
+            const active = document.querySelector(`.contents-link[data-section="${e.target.id}"]`);
+            if (active) active.classList.add('active');
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    sections.forEach(s => sectionObserver.observe(s));
   </script>
 
 </body>
