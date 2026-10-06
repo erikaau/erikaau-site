@@ -41,6 +41,8 @@
       --border: #ddd0be;
       --accent: #d4860a;
       --accent2: #c94a2d;
+      --accent3: #1a6e72;
+      --accent4: #2e4fa3;
     }
 
     body {
@@ -98,7 +100,7 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover { color: var(--accent4); }
 
     /* ── HERO SHAPES ── */
     /* ── HERO SHAPES ── */
@@ -140,14 +142,24 @@
       right: 180px;
     }
 
-    /* Wide bar — floats lower right */
+    /* Teal bar — floats lower right */
     .shape-3 {
       width: 200px;
       height: 44px;
-      background: var(--text);
-      opacity: 0.08;
+      background: var(--accent3);
+      opacity: 0.5;
       bottom: 22%;
       right: 60px;
+    }
+
+    /* Cobalt sliver — bottom left */
+    .shape-4 {
+      width: 80px;
+      height: 260px;
+      background: var(--accent4);
+      opacity: 0.18;
+      bottom: 0;
+      left: 0;
     }
 
     /* ── HERO ── */
@@ -336,8 +348,8 @@
     }
 
     .tool-pill:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: var(--accent3);
+      color: var(--accent3);
     }
 
     /* ── SKILLS ── */
@@ -366,7 +378,7 @@
       transition: color 0.2s;
     }
 
-    .skill-row:hover .skill-name { color: var(--accent); }
+    .skill-row:hover .skill-name { color: var(--accent3); }
 
     .skill-right {
       display: flex;
@@ -503,8 +515,8 @@
     .timeline-bar-fill {
       position: absolute;
       left: 0; top: 0; bottom: 0;
-      background: var(--accent);
-      opacity: 0.5;
+      background: linear-gradient(90deg, var(--accent4), var(--accent3), var(--accent), var(--accent2));
+      opacity: 0.7;
     }
 
     .timeline-years {
@@ -703,6 +715,7 @@
         <div class="shape shape-1"></div>
         <div class="shape shape-2"></div>
         <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
       </div>
       <p class="hero-kicker">UX Designer & Design Engineer</p>
       <h1>AI is the<br>material.<br><em>Design</em><br>is the craft.</h1>
