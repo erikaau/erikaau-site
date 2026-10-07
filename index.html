@@ -40,6 +40,7 @@
       --muted: #7a6a58;
       --border: #ddd0be;
       --accent: #d4860a;
+      --accent-text: #8a5200;
       --accent2: #c94a2d;
       --accent3: #1a6e72;
       --accent4: #2e4fa3;
@@ -133,7 +134,7 @@
       font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--accent-text);
       margin-bottom: 2rem;
     }
 
@@ -187,7 +188,7 @@
       transition: color 0.2s;
     }
 
-    .link-primary:hover { color: var(--accent); }
+    .link-primary:hover { color: var(--accent-text); }
 
     .link-ghost {
       font-size: 0.875rem;
@@ -239,7 +240,7 @@
 
     h2 em {
       font-style: italic;
-      color: var(--accent);
+      color: var(--accent-text);
     }
 
     /* ── ABOUT ── */
@@ -435,7 +436,7 @@
       font-family: 'Syne', system-ui, sans-serif;
       font-size: 3rem;
       font-weight: 400;
-      color: var(--border);
+      color: #9c8873;
       line-height: 1;
     }
 
@@ -548,7 +549,7 @@
 
     .contact-heading em {
       font-style: italic;
-      color: var(--accent);
+      color: var(--accent-text);
     }
 
     .contact-sub {
@@ -575,7 +576,7 @@
       transition: color 0.2s;
     }
 
-    .contact-link:hover { color: var(--accent); }
+    .contact-link:hover { color: var(--accent-text); }
 
     .contact-link-label {
       font-size: 0.7rem;
@@ -593,7 +594,7 @@
       transition: color 0.2s;
     }
 
-    .footer-link:hover { color: var(--accent); }
+    .footer-link:hover { color: var(--accent-text); }
 
     /* ── FOOTER ── */
     footer {
@@ -642,7 +643,7 @@
       font-weight: 500;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: #665544;
       margin-bottom: 1rem;
     }
 
@@ -653,32 +654,28 @@
       gap: 0.6rem;
       text-decoration: none;
       padding: 0.35rem 0;
-      transition: all 0.2s;
-      opacity: 0.5;
-    }
-
-    .contents-link:hover,
-    .contents-link.active {
-      opacity: 1;
+      transition: color 0.2s;
     }
 
     .contents-link-num {
       font-size: 0.6rem;
       font-weight: 500;
       letter-spacing: 0.1em;
-      color: var(--muted);
+      color: #665544;
       min-width: 1.5rem;
     }
 
     .contents-link-label {
       font-size: 0.75rem;
       font-weight: 400;
-      color: var(--text);
+      color: #665544;
       letter-spacing: 0.03em;
     }
 
-    .contents-link.active .contents-link-num { color: var(--accent); }
-    .contents-link.active .contents-link-label { color: var(--accent); }
+    .contents-link:hover .contents-link-label { color: var(--text); }
+
+    .contents-link.active .contents-link-num { color: var(--accent-text); }
+    .contents-link.active .contents-link-label { color: var(--accent-text); }
 
     @media (max-width: 768px) {
       .contents-nav { display: none; }
@@ -772,7 +769,7 @@
         <h2>Selected<br>projects</h2>
       </div>
       <p class="coming-soon-text fade-in">Case studies coming soon.</p>
-      <div class="projects-grid">
+      <div class="projects-grid" aria-hidden="true">
         <div class="project-card">
           <p class="project-num">001</p>
           <p class="project-title">Conversational AI Dashboard</p>
