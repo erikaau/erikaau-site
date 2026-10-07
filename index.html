@@ -76,8 +76,8 @@
 
     /* Large saffron block — right side */
     .shape-1 {
-      width: 280px;
-      height: 400px;
+      width: 340px;
+      height: 420px;
       background: var(--accent);
       opacity: 0.22;
       top: 0;
@@ -90,8 +90,8 @@
       height: 130px;
       background: var(--accent2);
       opacity: 0.75;
-      top: 320px;
-      right: 180px;
+      top: 380px;
+      right: 220px;
     }
 
     /* Teal bar — floats lower right */
@@ -634,48 +634,87 @@
     .contents-nav {
       display: flex;
       flex-direction: column;
-      gap: 0.1rem;
-      text-align: right;
+      width: 260px;
+      margin-right: 0.5rem;
     }
 
     .contents-label {
-      font-size: 0.65rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: #665544;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .contents-link {
       display: flex;
-      justify-content: flex-end;
-      align-items: baseline;
-      gap: 0.6rem;
+      align-items: center;
+      gap: 0.85rem;
       text-decoration: none;
-      padding: 0.35rem 0;
+      padding: 0.45rem 0;
+      color: #665544;
+    }
+
+    .contents-glyph {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+      background: var(--c);
+      transition: border-radius 0.45s cubic-bezier(.6,0,.3,1.4), transform 0.45s cubic-bezier(.6,0,.3,1.4);
+    }
+
+    /* Each shape morphs between geometric and organic */
+    .glyph-arch    { border-radius: 50% 50% 0 0; }
+    .glyph-square  { border-radius: 0; }
+    .glyph-circle  { border-radius: 50%; }
+    .glyph-petal   { border-radius: 50% 0; }
+    .glyph-diamond { border-radius: 0; transform: rotate(45deg) scale(.85); }
+
+    .contents-link:hover .glyph-arch,    .contents-link.active .glyph-arch    { border-radius: 50%; transform: scale(1.15); }
+    .contents-link:hover .glyph-square,  .contents-link.active .glyph-square  { border-radius: 50% 0; transform: rotate(-90deg) scale(1.15); }
+    .contents-link:hover .glyph-circle,  .contents-link.active .glyph-circle  { border-radius: 0; transform: rotate(45deg) scale(.95); }
+    .contents-link:hover .glyph-petal,   .contents-link.active .glyph-petal   { border-radius: 50%; transform: scale(1.15); }
+    .contents-link:hover .glyph-diamond, .contents-link.active .glyph-diamond { border-radius: 50% 50% 0 0; transform: rotate(0) scale(1.15); }
+
+    .contents-link-label {
+      font-family: 'Syne', system-ui, sans-serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
       transition: color 0.2s;
     }
 
+    .contents-leader {
+      flex: 1;
+      align-self: flex-end;
+      margin-bottom: 0.45rem;
+      border-bottom: 2px dotted #c4b39c;
+      transition: border-color 0.3s;
+    }
+
     .contents-link-num {
-      font-size: 0.6rem;
+      font-size: 0.8rem;
       font-weight: 500;
-      letter-spacing: 0.1em;
-      color: #665544;
-      min-width: 1.5rem;
+      letter-spacing: 0.08em;
+      font-variant-numeric: tabular-nums;
     }
 
-    .contents-link-label {
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: #665544;
-      letter-spacing: 0.03em;
+    .contents-link:hover,
+    .contents-link.active { color: var(--text); }
+
+    .contents-link:hover .contents-leader,
+    .contents-link.active .contents-leader { border-color: var(--c); }
+
+    .contents-link:focus-visible {
+      outline: 2px solid var(--text);
+      outline-offset: 4px;
+      border-radius: 2px;
     }
 
-    .contents-link:hover .contents-link-label { color: var(--text); }
-
-    .contents-link.active .contents-link-num { color: var(--accent-text); }
-    .contents-link.active .contents-link-label { color: var(--accent-text); }
+    @media (prefers-reduced-motion: reduce) {
+      .contents-glyph, .contents-leader { transition: none; }
+    }
 
     @media (max-width: 768px) {
       .contents-nav { display: none; }
@@ -727,25 +766,35 @@
       <span class="hero-name">Erika Au</span>
       <nav class="contents-nav" aria-label="Page contents">
         <p class="contents-label">Contents</p>
-        <a href="#work" class="contents-link" data-section="work">
-          <span class="contents-link-num">01</span>
+        <a href="#work" class="contents-link" data-section="work" style="--c: var(--accent2)">
+          <span class="contents-glyph glyph-arch" aria-hidden="true"></span>
           <span class="contents-link-label">Work</span>
+          <span class="contents-leader" aria-hidden="true"></span>
+          <span class="contents-link-num" aria-hidden="true">01</span>
         </a>
-        <a href="#experience" class="contents-link" data-section="experience">
-          <span class="contents-link-num">02</span>
+        <a href="#experience" class="contents-link" data-section="experience" style="--c: var(--accent3)">
+          <span class="contents-glyph glyph-square" aria-hidden="true"></span>
           <span class="contents-link-label">Experience</span>
+          <span class="contents-leader" aria-hidden="true"></span>
+          <span class="contents-link-num" aria-hidden="true">02</span>
         </a>
-        <a href="#process" class="contents-link" data-section="process">
-          <span class="contents-link-num">03</span>
+        <a href="#process" class="contents-link" data-section="process" style="--c: var(--accent4)">
+          <span class="contents-glyph glyph-circle" aria-hidden="true"></span>
           <span class="contents-link-label">Process</span>
+          <span class="contents-leader" aria-hidden="true"></span>
+          <span class="contents-link-num" aria-hidden="true">03</span>
         </a>
-        <a href="#about" class="contents-link" data-section="about">
-          <span class="contents-link-num">04</span>
+        <a href="#about" class="contents-link" data-section="about" style="--c: var(--accent)">
+          <span class="contents-glyph glyph-petal" aria-hidden="true"></span>
           <span class="contents-link-label">About</span>
+          <span class="contents-leader" aria-hidden="true"></span>
+          <span class="contents-link-num" aria-hidden="true">04</span>
         </a>
-        <a href="#contact" class="contents-link" data-section="contact">
-          <span class="contents-link-num">05</span>
+        <a href="#contact" class="contents-link" data-section="contact" style="--c: var(--accent2)">
+          <span class="contents-glyph glyph-diamond" aria-hidden="true"></span>
           <span class="contents-link-label">Contact</span>
+          <span class="contents-leader" aria-hidden="true"></span>
+          <span class="contents-link-num" aria-hidden="true">05</span>
         </a>
       </nav>
       </div>
@@ -974,9 +1023,9 @@
       entries => {
         entries.forEach(e => {
           if (e.isIntersecting) {
-            contentsLinks.forEach(l => l.classList.remove('active'));
+            contentsLinks.forEach(l => { l.classList.remove('active'); l.removeAttribute('aria-current'); });
             const active = document.querySelector(`.contents-link[data-section="${e.target.id}"]`);
-            if (active) active.classList.add('active');
+            if (active) { active.classList.add('active'); active.setAttribute('aria-current', 'location'); }
           }
         });
       },
